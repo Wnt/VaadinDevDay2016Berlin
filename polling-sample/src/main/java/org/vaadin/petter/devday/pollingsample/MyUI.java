@@ -11,6 +11,7 @@ import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.themes.ValoTheme;
 
 public class MyUI extends UI {
 
@@ -19,6 +20,11 @@ public class MyUI extends UI {
     @Override
     protected void init(VaadinRequest request) {
         layout = new VerticalLayout();
+        
+        Label label = new Label("Here will be the messages from the backend:");
+        label.addStyleName(ValoTheme.LABEL_H1);
+		layout.addComponent(label);
+        
         layout.setMargin(true);
         layout.setSpacing(true);
         setContent(layout);
